@@ -1,0 +1,40 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,200;0,400;1,600&family=Libre+Baskerville:wght@400;700&family=Montserrat&family=Orbitron:wght@400;600;900&family=Teko&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,200;0,400;1,600&family=Libre+Baskerville:wght@400;700&family=Montserrat&family=Orbitron:wght@400;600;700;900&family=Teko&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,200;0,400;1,600&family=Libre+Baskerville:wght@400;700&family=Montserrat&family=Orbitron:wght@400;600;700;900&family=Teko:wght@400;500;600;700&display=swap");
+/* _______________________________import___________________________ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.fond {
+  background-image: url(https://cdnb.artstation.com/p/assets/images/images/027/204/833/large/justin-wentz-overhex-hangar-copy.jpg?1590882414);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: auto;
+}
+
+
+
+.registrate {
+    height: 80vh;
+    width: 25vw;
+    margin: 10px;
+    font-family: "Orbitron", sans-serif;
+    background-color: #ffa500;
+    text-align: center;
+    border-radius: 50px 1px;
+    text-align: center;
+
+}
+
+
+  
+  h1 h2 .col-sm-7 {
+    font-family: "Orbitron", sans-serif;
+  }
+
+
