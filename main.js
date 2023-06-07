@@ -5,33 +5,32 @@ document.addEventListener('DOMContentLoaded', function() {
   let botonEnviar = document.querySelector('.fondo__black');
   let divRegistrarse = document.querySelector('.registrate');
 
-
+  // 
   formulario.addEventListener('submit', function(evento) {
-    evento.preventDefault();
+    evento.preventDefault(); 
 
-  
+    
+    let nombre = document.getElementById('nombre').value;
     let correo = document.getElementById('email').value;
     let contraseña = document.getElementById('contraseña').value;
 
-   
-    if (correo && contraseña) {
-      
+    
+    if (nombre && correo && contraseña) {
+    
       let usuario = {
+        nombre: nombre,
         correo: correo,
         contraseña: contraseña
       };
 
-  
+     
       let usuarioJSON = JSON.stringify(usuario);
 
-
-      localStorage.setItem('usuario', usuarioJSON);
-
-     
-      let dominio = correo.split('@')[1];
+      
+      sessionStorage.setItem('usuario', usuarioJSON);
 
       
-      divRegistrarse.innerHTML = '<h1>Bienvenido ' + dominio + ' <i class="bi bi-person-vcard-fill"></i></h1>' +
+      divRegistrarse.innerHTML = '<h1>Bienvenido ' + nombre + ' <i class="bi bi-person-vcard-fill"></i></h1>' +
                                   '<hr>' +
                                   '<p><strong>El registro es necesario</strong> para garantizar la seguridad de la página y de los usuarios.</p>';
 
@@ -40,18 +39,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Comprueba si hay un usuario almacenado en el almacenamiento local
-  let usuarioJSONGuardado = localStorage.getItem('usuario');
+  
+  let usuarioJSONGuardado = sessionStorage.getItem('usuario');
   if (usuarioJSONGuardado) {
-    // Convierte la cadena JSON a un objeto de usuario
+    
     let usuarioGuardado = JSON.parse(usuarioJSONGuardado);
 
-    // Obtén el dominio del correo electrónico almacenado
-    let dominioGuardado = usuarioGuardado.correo.split('@')[1];
+    
+    let nombreGuardado = usuarioGuardado.nombre;
 
-    // Actualiza el contenido del div de registro con el mensaje de bienvenida
-    divRegistrarse.innerHTML = '<h1>Bienvenido ' + dominioGuardado + ' <i class="bi bi-person-vcard-fill"></i></h1>' +
+    
+    divRegistrarse.innerHTML = '<h1>Bienvenido ' + nombreGuardado + ' <i class="bi bi-person-vcard-fill"></i></h1>' +
                                 '<hr>' +
-                                '<p><strong>El registro es necesario</strong> para garantizar la seguridad de la página y de los usuarios.</p>';
+                                '<p> registrado exitosamente </p>';
   }
 });
